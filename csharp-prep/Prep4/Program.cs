@@ -22,17 +22,29 @@ class Program
 
         int sum = numbers.Sum();
         double average = numbers.Average();
+
         int highestNumber = numbers[0];
+        int lowestPositiveNum = int.MaxValue;
         foreach (int number in numbers)
         {
             if (number > highestNumber)
             {
                 highestNumber = number;
             }
+            if (number > 0 && number < lowestPositiveNum)
+            {
+                lowestPositiveNum = number;
+            }
         }
 
         Console.WriteLine($"The sum is: {sum}");
         Console.WriteLine($"The average is: {average}");
         Console.WriteLine($"The largest number is: {highestNumber}");
+        Console.WriteLine($"The lowest positive number is: {lowestPositiveNum}");
+        numbers.Sort();
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number);
+        }
     }
 }
