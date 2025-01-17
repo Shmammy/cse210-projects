@@ -22,7 +22,17 @@ class Program
 
         int sum = numbers.Sum();
         double average = numbers.Average();
+        int highestNumber = numbers[0];
+        foreach (int number in numbers)
+        {
+            if (number > highestNumber)
+            {
+                highestNumber = number;
+            }
+        }
+
         Console.WriteLine($"The sum is: {sum}");
         Console.WriteLine($"The average is: {average}");
+        Console.WriteLine($"The largest number is: {highestNumber}");
     }
 }
